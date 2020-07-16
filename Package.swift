@@ -5,18 +5,21 @@ import PackageDescription
 
 let package = Package(
     name: "GeoQueries",
+    platforms: [
+        .iOS(.v11)
+    ],
     products: [
         .library(
             name: "GeoQueries",
             targets: ["GeoQueries"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/realm/realm-cocoa", from: "5.0.0"),
+        .package(url: "https://github.com/realm/realm-cocoa", from: "5.1.0"),
     ],
     targets: [
         .target(
             name: "GeoQueries",
-            dependencies: ["RealmSwift"],
+            dependencies: ["Realm"],
             path: ".",
             sources: ["GeoQueries.swift"]
         )
